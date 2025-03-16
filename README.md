@@ -2,17 +2,31 @@
 
 ## **Introduction**
 
-Ce projet vise à développer un **jeu de devinette de mots**, en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
+Ce projet vise à développer un **jeu de devinette de mots** en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
 
-Chaque phase du projet introduit des concepts essentiels en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
+Chaque phase introduit des concepts essentiels en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
 
 ---
 
-## **1. Organisation du Projet**
+## **1. Résumé des Phases du Projet**
 
-Le projet est structuré en trois phases, chacune avec un squelette de code à compléter :
+Le projet est divisé en trois phases. Vous devez les réaliser dans l’ordre en complétant le code fourni dans chaque dossier.
 
-```
+| Phase | Objectif | Lien vers les consignes |
+|-------|---------|------------------------|
+| **Phase 1 : Version Solo** | Implémenter un jeu où un joueur tente de deviner des mots en un temps limité. | [Consignes Phase 1](Phase_1_Fondamentaux/Phase_1_Consignes.md) |
+| **Phase 2 : Mode Multijoueur** | Modifier le jeu pour permettre à plusieurs joueurs de jouer en réseau via un serveur. | [Consignes Phase 2](Phase_2_Multijoueurs/Phase_2_Consignes.md) |
+| **Phase 3 : Intelligence Artificielle** | Développer un joueur virtuel capable de deviner les mots avec des stratégies avancées. | [Consignes Phase 3](Phase_3_IA/Phase_3_Consignes.md) |
+
+Vous devez suivre ces étapes dans l’ordre et implémenter progressivement les fonctionnalités demandées.
+
+---
+
+## **2. Organisation du Projet**
+
+Le projet est structuré comme suit :
+
+```text
 ├── Phase_1_Fondamentaux
 │   ├── Phase_1_Consignes.md
 │   └── defi_mot_initial.py
@@ -33,11 +47,9 @@ Chaque phase comprend :
 - **Un squelette de code** (`.py`) à compléter et enrichir.
 - **D'éventuels fichiers de tests** (`test_*.py`).
 
-Vous devez suivre ces phases dans l’ordre et implémenter progressivement les fonctionnalités demandées.
-
 ---
 
-## **2. Utilisation d'un Environnement Virtuel**
+## **3. Utilisation d'un Environnement Virtuel**
 
 L'utilisation d'un **environnement virtuel** est recommandée pour :
 
@@ -69,7 +81,7 @@ pip install -r requirements.txt
 
 ---
 
-## **3. Outils pour la Gestion du Projet en Solo**
+## **4. Outils pour la Gestion du Projet en Solo**
 
 Même si vous travaillez seul, il est important de bien organiser votre travail. Voici quelques outils utiles :
 
@@ -91,41 +103,9 @@ Même si vous travaillez seul, il est important de bien organiser votre travail.
 
 ---
 
-## **4. Exécution et Tests**
-
-### **Exécuter la version solo**
-
-```sh
-python Phase_1_Fondamentaux/defi_mot_initial.py
-```
-
-### **Lancer le mode multijoueur**
-
-1. **Démarrer le serveur** :
-
-   ```sh
-   python Phase_2_Multijoueurs/serveur_defi_mot.py
-   ```
-
-2. **Démarrer un client** :
-
-   ```sh
-   python Phase_2_Multijoueurs/client_defi_mot.py
-   ```
-
-### **Tester le projet**
-
-Des fichiers de tests unitaires sont fournis. Exécutez-les pour vérifier votre implémentation :
-
-```sh
-pytest Phase_2_Multijoueurs/test_multijoueur.py
-```
-
----
-
 ## **5. Livrables à Rendre**
 
-Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail :
+Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail.
 
 ### **Phase 1 : Version Solo**
 
@@ -172,7 +152,38 @@ Tout au long du projet, plusieurs livrables peuvent être demandés pour évalue
 
 ---
 
-## **7. Objectifs à Atteindre**
+## **7. Ressources**
+
+Voici quelques liens utiles pour vous aider dans la réalisation du projet.
+
+### **Documentation Python**
+
+- [Documentation officielle de Python](https://docs.python.org/3/)
+- [Tutoriel sur les fichiers en Python](https://realpython.com/read-write-files-python/)
+
+### **Programmation Réseau**
+
+- [Introduction aux sockets en Python](https://realpython.com/python-sockets/)
+- [Exemples de serveurs et clients avec `socket`](https://docs.python.org/3/library/socket.html)
+
+### **Tests et Débogage**
+
+- [Documentation de `pytest`](https://docs.pytest.org/en/stable/)
+- [Guide de débogage en Python](https://realpython.com/python-debugging-pdb/)
+
+### **Intelligence Artificielle et Algorithmes**
+
+- [Utilisation de statistiques pour améliorer une IA](https://towardsdatascience.com/basic-statistics-for-ai-enthusiasts-73ca91d3649a)
+- [Concepts de base des heuristiques en IA](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-heuristic-search/)
+
+### **Gestion de Projet**
+
+- [Trello - Outil de gestion de tâches](https://trello.com/)
+- [Notion - Outil de documentation et d'organisation](https://www.notion.so/)
+
+---
+
+## **8. Objectifs à Atteindre**
 
 - **Phase 1** : Un jeu **fonctionnel en solo** avec gestion du temps et du score.
 - **Phase 2** : Un **mode multijoueur stable**, où les joueurs peuvent proposer des lettres et voir l’évolution du mot en temps réel.
