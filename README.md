@@ -10,13 +10,13 @@ Chaque phase introduit des concepts essentiels en **Python**, **programmation r�
 
 ## **📄 Planning du Projet - Défi du Mot Mystère (1 Semaine)**  
 
-| Jour | Matin (8h30 - 12h30) | Après-midi (13h30 - 17h30) | Phase | Livrables |
-|------|----------------------|---------------------------|--------|-----------|
-| **Lundi** | 🎯 **Présentation du projet** <br> ⚙️ **Mise en place de l’environnement (Git, venv)** <br> 🔹 **[Cours POO](Utils/01-POO/README.md)** | 📝 **[Exercices POO](Utils/01-POO/exercices/)** <br> 🛠 **Début implémentation du jeu solo** | **Phase 1 : Début** | 📌 **Livrable Phase 1 : Début** |
-| **Mardi** | 🔹 **[Cours Réseau](Utils/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercice Client-Serveur](Utils/02-Programmation_Reseau/exercices/)** | 🛠 **Développement multijoueur** <br> 🔄 **Test du serveur et des connexions** | **Phase 1 : Fin** <br> **Phase 2 : Début** | |
-| **Mercredi** | 🔗 **Gestion des connexions multiples** <br> 🛠 **Débogage et amélioration multijoueur** | ✅ **[Tests unitaires avec PyTest](Utils/03-PyTest/README.md)** <br> 🛠 **Validation du mode multijoueur** |  | 📌 **Livrable Phase 1 : Fin** <br> 📌 **Livrable Phase 2 : Début** |
-| **Jeudi** | ✅ **Validation du projet** <br> 🔍 **Correction des derniers bugs** <br> 🤖 **Début développement IA** | *(Pas de cours l’après-midi)* | **Phase 2 : Fin** <br> **Phase 3 : Début** | |
-| **Vendredi** | 🛠 **Optimisation et tests IA** <br> 📊 **Analyse et ajustements** | 🏆 **Concours IA : Matchs et comparaison des stratégies** | **Phase 3 : Fin** | 📌 **Livrable Phase 2 : Fin** <br> 📌 **Livrable Phase 3 : Début et Fin** |
+| Jour | Matin (8h30 - 12h30) | Après-midi (13h30 - 17h30) | Début et fin des Phases |
+|------|----------------------|---------------------------|---------------------------|
+| **Lundi** | 🎯 **Présentation du projet** (Objectifs, organisation, livrables) <br> ⚙️ **Mise en place de l’environnement (Git, venv)** <br> 🔹 **[Cours POO](Utils/01-POO/README.md)** | 📝 **[Exercices POO](Utils/01-POO/exercices/)** <br> 🛠 **Implémentation du jeu solo (gestion des mots, affichage, chrono)** <br> ✅ **Finalisation et tests du mode solo** | **Phase 1 : Début et Fin** |
+| **Mardi** | 🔹 **[Cours Réseau](Utils/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercice Client-Serveur](Utils/02-Programmation_Reseau/exercices/)** | 🛠 **Développement multijoueur** (Serveur + Clients) <br> 🔄 **Test du serveur et des connexions** | **Phase 2 : Début** |
+| **Mercredi** | 🔗 **Gestion des connexions multiples** <br> 🛠 **Débogage et amélioration multijoueur** | ✅ **[Tests unitaires avec PyTest](Utils/03-PyTest/README.md)** <br> 🛠 **Validation du mode multijoueur** <br> 🔍 **Corrections finales** | **Phase 2 : Fin** |
+| **Jeudi** | ✅ **Validation complète du projet** <br> 🤖 **Début du développement IA (Fréquences des lettres, analyse des mots possibles)** | *(Pas de cours l’après-midi)* | **Phase 3 : Début** |
+| **Vendredi** | 🛠 **Optimisation et tests IA** <br> 📊 **Analyse et ajustements** | 🏆 **Concours IA : Matchs et comparaison des stratégies** | **Phase 3 : Fin** |
 
 ---
 
