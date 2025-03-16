@@ -1,176 +1,183 @@
-# **📜 Cahier des Charges – Projet Python : "CryptoBench – Analyse et Comparaison des Algorithmes de Chiffrement"** 🔐
+# **Défi du Mot Mystère - Guide de Développement**
+
+## **Introduction**
+
+Ce projet vise à développer un **jeu de devinette de mots**, en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
+
+Chaque phase du projet introduit des concepts essentiels en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
 
 ---
 
-## **🌍 Contexte : Évaluation et Optimisation des Algorithmes de Cryptographie**
+## **1. Organisation du Projet**
 
-La cryptographie est un élément fondamental de la sécurité informatique. Toutefois, tous les algorithmes ne se valent pas : certains sont rapides mais peu sécurisés, d’autres sont robustes mais très gourmands en ressources.
+Le projet est structuré en trois phases, chacune avec un squelette de code à compléter :
 
-L’objectif de ce projet est de **comparer et analyser différents algorithmes de chiffrement et de déchiffrement** en mesurant leurs performances en **temps d’exécution, consommation mémoire et complexité algorithmique**.
+```
+├── Phase_1_Fondamentaux
+│   ├── Phase_1_Consignes.md
+│   └── defi_mot_initial.py
+├── Phase_2_Multijoueurs
+│   ├── Phase_2_Consignes.md
+│   ├── client_defi_mot.py
+│   ├── serveur_defi_mot.py
+│   └── test_multijoueur.py
+├── Phase_3_IA
+│   ├── Phase_3_Consignes.md
+│   └── joueur_virtuel.py
+└── README.md
+```
 
-À travers ce projet, les étudiants devront **implémenter, tester et comparer plusieurs méthodes de chiffrement et de déchiffrement**, comprendre leurs **forces et faiblesses** et explorer leurs **applications pratiques**.
+Chaque phase comprend :
 
----
+- **Un fichier de consignes détaillé** (`Phase_X_Consignes.md`).
+- **Un squelette de code** (`.py`) à compléter et enrichir.
+- **D'éventuels fichiers de tests** (`test_*.py`).
 
-## **1️⃣ Objectifs pédagogiques**
-
-✅ **Implémentation de plusieurs algorithmes de chiffrement et déchiffrement**.  
-✅ **Analyse des performances et de la complexité algorithmique** (`O(n)`, `O(n³)`, etc.).  
-✅ **Visualisation des résultats sous forme de graphiques**.  
-✅ **Comprendre les différences entre chiffrement symétrique et asymétrique**.  
-✅ **Réalisation d’attaques pour tester la robustesse des algorithmes**.
-
----
-
-## **2️⃣ Fonctionnalités attendues**
-
-### **A. Algorithmes de cryptographie à implémenter**
-
-📌 **Chiffrement symétrique**
-
-- **Chiffrement de César** (simple substitution, vulnérable aux attaques par fréquence).
-- **Chiffrement XOR** (opération bit à bit, souvent utilisé dans les flux).
-- **AES (Advanced Encryption Standard)** (bloc de 128 bits, très sécurisé).
-
-📌 **Chiffrement asymétrique**
-
-- **RSA (Rivest-Shamir-Adleman)** (basé sur la factorisation des grands nombres premiers).
-
-📌 **Fonctions de hachage**
-
-- **SHA-256** (hachage sécurisé).
-- **MD5** (hachage rapide mais faible en sécurité).
+Vous devez suivre ces phases dans l’ordre et implémenter progressivement les fonctionnalités demandées.
 
 ---
 
-### **B. Déchiffrement des algorithmes**
+## **2. Utilisation d'un Environnement Virtuel**
 
-Les étudiants devront également **implémenter le déchiffrement** des méthodes suivantes :
+L'utilisation d'un **environnement virtuel** est recommandée pour :
 
-1️⃣ **Chiffrement de César**
+- **Isoler les dépendances du projet** afin d’éviter les conflits avec d’autres projets Python installés sur votre machine.
+- **Assurer la reproductibilité** : un fichier `requirements.txt` permet d’installer exactement les mêmes versions de bibliothèques sur une autre machine.
+- **Travailler sur plusieurs versions de Python** sans interférer avec les installations globales.
 
-- Déchiffrer un message en **inversant le décalage**.
-- Tester une **attaque par brute-force** (essai des 25 clés possibles).
+### **Création et activation de l’environnement**
 
-2️⃣ **Chiffrement XOR**
+```sh
+python -m venv env
+source env/bin/activate  # Sur macOS/Linux
+env\Scripts\activate  # Sur Windows
+```
 
-- Déchiffrer un texte en appliquant **la même clé XOR utilisée au départ**.
-- Vérifier la résistance en analysant la **fréquence des caractères**.
+### **Installation des dépendances**
 
-3️⃣ **AES**
+Si des bibliothèques sont nécessaires, créez un fichier `requirements.txt` :
 
-- Déchiffrer un texte en **mode ECB** (Electronic Code Book).
-- Comprendre pourquoi **ce mode est vulnérable** et proposer des alternatives.
+```sh
+pip freeze > requirements.txt
+```
 
-4️⃣ **RSA**
+Puis installez-les sur une autre machine avec :
 
-- Générer une **paire de clés publique/privée**.
-- Chiffrer et déchiffrer un message à l’aide des clés générées.
-
----
-
-### **C. Analyse et Comparaison des Algorithmes**
-
-📌 **Expériences à réaliser :**  
-✅ **Mesurer le temps d’exécution des algorithmes** pour différentes tailles de fichiers.  
-✅ **Analyser la consommation mémoire** pour chaque méthode.  
-✅ **Comparer les complexités théoriques et les résultats expérimentaux**.  
-✅ **Visualiser les performances sous forme de graphes**.
-
-📌 **Outils à utiliser :**
-
-- **`timeit`** pour mesurer le temps d’exécution.
-- **`memory_profiler`** pour évaluer la consommation mémoire.
-- **`matplotlib`** pour générer des graphiques.
+```sh
+pip install -r requirements.txt
+```
 
 ---
 
-## **3️⃣ Expérimentation et Tests**
+## **3. Outils pour la Gestion du Projet en Solo**
 
-### **A. Jeux de tests**
+Même si vous travaillez seul, il est important de bien organiser votre travail. Voici quelques outils utiles :
 
-📌 **Les étudiants devront chiffrer et déchiffrer** :  
-✅ Un texte court (10 caractères).  
-✅ Un texte long (500 000 caractères).  
-✅ Un fichier binaire (image, PDF).
+### **Gestion du Code**
 
-### **B. Attaques sur les algorithmes**
+- **GitHub / GitLab** : Versionner votre projet, sauvegarder vos évolutions et revenir à une version précédente en cas d’erreur.
+- **Commit régulier** : Faire des commits à chaque fonctionnalité importante permet d'éviter de perdre son travail.
+- **Utilisation des branches** (optionnel) : Travailler sur une fonctionnalité spécifique sans modifier directement le code principal.
 
-📌 **Les étudiants devront tester** :  
-✅ Une **attaque brute-force** sur César et XOR.  
-✅ Une **analyse fréquentielle** pour casser un message chiffré.  
-✅ Une **tentative de factorisation de clé RSA** (simulation avec petits nombres).
+### **Suivi du Développement**
 
----
+- **Trello / Notion** : Organiser les tâches sous forme de tableau (To-Do, En cours, Terminé).
+- **Journal de bord** : Prendre des notes sur les problèmes rencontrés et les solutions trouvées.
 
-## **4️⃣ Contraintes Techniques et Optimisation**
+### **Débogage et Tests**
 
-📌 **Langages et bibliothèques**  
-✅ **Python 3.x**  
-✅ **`pycryptodome`** pour AES et RSA.  
-✅ **`hashlib`** pour SHA-256 et MD5.  
-✅ **`matplotlib`, `numpy`** pour la visualisation des performances.
-
-📌 **Optimisation des tests**  
-✅ Exécuter chaque algorithme **sur plusieurs tailles de données**.  
-✅ Réduire les **temps d’exécution** en utilisant des méthodes optimisées.
+- **Logs (`print()`)** : Pour afficher l’évolution du programme et comprendre les erreurs.
+- **Pytest** : Pour écrire des tests automatisés et valider que le code fonctionne après chaque modification.
 
 ---
 
-## **5️⃣ Déroulement du projet (4 jours et demi)**
+## **4. Exécution et Tests**
 
-📌 **Jour 1 : Implémentation des algorithmes de chiffrement**
+### **Exécuter la version solo**
 
-- Implémentation de **César, XOR, AES, RSA, SHA-256, MD5**.
-- Vérification du bon fonctionnement.
+```sh
+python Phase_1_Fondamentaux/defi_mot_initial.py
+```
 
-📌 **Jour 2 : Déchiffrement et tests de robustesse**
+### **Lancer le mode multijoueur**
 
-- Implémentation du **déchiffrement pour chaque méthode**.
-- Test des **attaques sur les algorithmes faibles**.
+1. **Démarrer le serveur** :
 
-📌 **Jour 3 : Mesures de performance et visualisation**
+   ```sh
+   python Phase_2_Multijoueurs/serveur_defi_mot.py
+   ```
 
-- Collecte des **temps d’exécution** pour différents jeux de données.
-- Génération des **courbes de performance** et comparaison.
+2. **Démarrer un client** :
 
-📌 **Jour 4 (Matin) : Optimisation et étude de cas**
+   ```sh
+   python Phase_2_Multijoueurs/client_defi_mot.py
+   ```
 
-- Comparaison entre **chiffrement symétrique et asymétrique**.
-- Discussion sur **le choix des algorithmes selon les contextes**.
+### **Tester le projet**
 
-📌 **Jour 5 : Présentation et synthèse**
+Des fichiers de tests unitaires sont fournis. Exécutez-les pour vérifier votre implémentation :
 
-- **Présentation des conclusions et des choix d’algorithmes optimaux**.
-- **Démonstration des performances et des attaques testées**.
-
----
-
-## **6️⃣ Livrables attendus**
-
-✔️ **Code source bien structuré et documenté**.  
-✔️ **Résultats des mesures de performance sur différents jeux de données**.  
-✔️ **Graphiques comparant les temps d’exécution et la consommation mémoire**.  
-✔️ **Rapport final expliquant les différences théoriques et expérimentales**.  
-✔️ **Présentation des conclusions et recommandations**.
+```sh
+pytest Phase_2_Multijoueurs/test_multijoueur.py
+```
 
 ---
 
-## **7️⃣ Critères d’évaluation**
+## **5. Livrables à Rendre**
 
-📌 **Qualité du code et modularité** (20%)  
-📌 **Exactitude des implémentations des algorithmes** (25%)  
-📌 **Pertinence et rigueur des mesures expérimentales** (20%)  
-📌 **Visualisation et analyse des résultats** (15%)  
-📌 **Présentation et rapport final** (10%)  
-📌 **Optimisation et réflexion sur les choix d’algorithmes** (10%)
+Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail :
+
+### **Phase 1 : Version Solo**
+
+📌 **Code source final** de `defi_mot_initial.py`  
+📌 **Documentation du code** sous forme de commentaires  
+📌 **Un rapport (PDF ou Markdown) expliquant :**
+
+- L’architecture du programme (comment vous avez structuré votre code)
+- Les choix techniques effectués
+- Les difficultés rencontrées et les solutions trouvées
 
 ---
 
-## **8️⃣ Conclusion**
+### **Phase 2 : Mode Multijoueur**
 
-Ce projet permet aux étudiants de **comprendre en profondeur les algorithmes de cryptographie**, **évaluer leurs performances**, **tester leur robustesse** et **choisir le bon chiffrement en fonction du contexte**.
+📌 **Code source final** de `serveur_defi_mot.py` et `client_defi_mot.py`  
+📌 **Fichier `test_multijoueur.py` fonctionnel**  
+📌 **Un rapport expliquant :**
 
-En expérimentant avec des **attaques et des mesures de performance**, les étudiants acquerront **une vision critique et analytique** de la cryptographie appliquée.
+- Comment fonctionne l'échange de données entre client et serveur
+- Les problèmes de synchronisation et comment ils ont été résolus
+- Les tests réalisés pour valider votre implémentation
 
-🔐 **Prêts à analyser et optimiser la sécurité des algorithmes ?** 🚀
+---
+
+### **Phase 3 : Intelligence Artificielle**
+
+📌 **Code source final** de `joueur_virtuel.py`  
+📌 **Un rapport expliquant :**
+
+- Les stratégies utilisées pour l'IA (fréquence des lettres, filtrage des mots possibles, prise de décision)
+- Les performances de l'IA (taux de réussite, temps moyen pour deviner un mot)
+- Une comparaison avec un joueur humain (si possible)
+
+---
+
+## **6. Conseils pour Réussir**
+
+- **Testez régulièrement votre code** : Ne développez pas tout d’un coup sans vérifier si ça fonctionne.
+- **Commencez par des fonctionnalités simples** avant d'ajouter des optimisations.
+- **Utilisez des prints et des logs** pour voir où ça bloque.
+- **Ne négligez pas la documentation** : Expliciter vos choix facilitera la compréhension du projet.
+- **Anticipez les erreurs possibles** (mauvaises entrées utilisateur, client qui se déconnecte, etc.).
+
+---
+
+## **7. Objectifs à Atteindre**
+
+- **Phase 1** : Un jeu **fonctionnel en solo** avec gestion du temps et du score.
+- **Phase 2** : Un **mode multijoueur stable**, où les joueurs peuvent proposer des lettres et voir l’évolution du mot en temps réel.
+- **Phase 3** : Une **intelligence artificielle capable de jouer seule**, avec une logique d’apprentissage et d’optimisation.
+
+L’objectif est d’avoir un projet **fonctionnel et bien structuré**, en appliquant de bonnes pratiques de développement.
+
+Bonne programmation !
