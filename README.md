@@ -12,9 +12,9 @@ Chaque phase introduit des concepts essentiels en **Python**, **programmation r�
 
 | Jour | Matin (8h30 - 12h30) | Après-midi (13h30 - 17h30) | Début et fin des Phases |
 |------|----------------------|---------------------------|---------------------------|
-| **Lundi** | 🎯 **Présentation du projet** (Objectifs, organisation, livrables) <br> ⚙️ **Mise en place de l’environnement (Git, venv)** <br> 🔹 **[Cours POO](Utils/01-POO/README.md)** | 📝 **[Exercices POO](Utils/01-POO/exercices/)** <br> 🛠 **Implémentation du jeu solo (gestion des mots, affichage, chrono)** <br> ✅ **Finalisation et tests du mode solo** | **Phase 1 : Début et Fin** |
-| **Mardi** | 🔹 **[Cours Réseau](Utils/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercice Client-Serveur](Utils/02-Programmation_Reseau/exercices/)** | 🛠 **Développement multijoueur** (Serveur + Clients) <br> 🔄 **Test du serveur et des connexions** | **Phase 2 : Début** |
-| **Mercredi** | 🔗 **Gestion des connexions multiples** <br> 🛠 **Débogage et amélioration multijoueur** | ✅ **[Tests unitaires avec PyTest](Utils/03-PyTest/README.md)** <br> 🛠 **Validation du mode multijoueur** <br> 🔍 **Corrections finales** | **Phase 2 : Fin** |
+| **Lundi** | 🎯 **Présentation du projet** (Objectifs, organisation, livrables) <br> ⚙️ **Mise en place de l’environnement (Git, venv)** <br> 🔹 **[Cours POO](Ressources_Utiles/01-POO/README.md)** | 📝 **[Exercices POO](Ressources_Utiles/01-POO/exercices/)** <br> 🛠 **Implémentation du jeu solo (gestion des mots, affichage, chrono)** <br> ✅ **Finalisation et tests du mode solo** | **Phase 1 : Début et Fin** |
+| **Mardi** | 🔹 **[Cours Réseau](Ressources_Utiles/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercice Client-Serveur](Ressources_Utiles/02-Programmation_Reseau/exercices/)** | 🛠 **Développement multijoueur** (Serveur + Clients) <br> 🔄 **Test du serveur et des connexions** | **Phase 2 : Début** |
+| **Mercredi** | 🔗 **Gestion des connexions multiples** <br> 🛠 **Débogage et amélioration multijoueur** | ✅ **[Tests unitaires avec PyTest](Ressources_Utiles/03-PyTest/README.md)** <br> 🛠 **Validation du mode multijoueur** <br> 🔍 **Corrections finales** | **Phase 2 : Fin** |
 | **Jeudi** | ✅ **Validation complète du projet** <br> 🤖 **Début du développement IA (Fréquences des lettres, analyse des mots possibles)** | *(Pas de cours l’après-midi)* | **Phase 3 : Début** |
 | **Vendredi** | 🛠 **Optimisation et tests IA** <br> 📊 **Analyse et ajustements** | 🏆 **Concours IA : Matchs et comparaison des stratégies** | **Phase 3 : Fin** |
 
@@ -93,9 +93,9 @@ pip install -r requirements.txt
 
 ---
 
-## **4. Outils pour la Gestion du Projet en Solo**
+## **4. ORessources_Utiles pour la Gestion du Projet en Solo**
 
-Même si vous travaillez seul, il est important de bien organiser votre travail. Voici quelques outils utiles :
+Même si vous travaillez seul, il est important de bien organiser votre travail. Voici quelques oRessources_Utiles utiles :
 
 ### **Gestion du Code**
 
