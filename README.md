@@ -186,7 +186,7 @@ Voici quelques liens utiles pour vous aider dans la réalisation du projet.
 ### **Intelligence Artificielle et Algorithmes**
 
 - [Utilisation de statistiques pour améliorer une IA](https://towardsdatascience.com/basic-statistics-for-ai-enthusiasts-73ca91d3649a)
-- [Concepts de base des heuristiques en IA](https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-heuristic-search/)
+- [Concepts de base des heuristiques en IA]([https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-heuristic-search/](https://en.wikipedia.org/wiki/Heuristic_(computer_science)))
 
 ### **Gestion de Projet**
 
