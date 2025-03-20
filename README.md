@@ -117,42 +117,36 @@ Même si vous travaillez seul, il est important de bien organiser votre travail.
 
 ---
 
-## **5. Livrables à Rendre**
+## **5.Livrables à Rendre**
 
 Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail.
 
 ### **Phase 1 : Version Solo**
-
-📌 **Code source final** de `battleship_initial.py`
+📌 **Code source final** de `battleship_initial.py`  
 📌 **Documentation du code** sous forme de commentaires  
-📌 **Un rapport (PDF ou Markdown) expliquant :**
-
-- L’architecture du programme (comment vous avez structuré votre code)
-- Les choix techniques effectués
-- Les difficultés rencontrées et les solutions trouvées
+📌 **Un rapport (PDF ou Markdown) expliquant :**  
+   - L’architecture du programme (comment vous avez structuré votre code).  
+   - Les choix techniques effectués.  
+   - Les difficultés rencontrées et les solutions trouvées.  
 
 ---
 
 ### **Phase 2 : Mode Multijoueur**
-
-📌 **Code source final** de `serveur_defi_mot.py` et `client_defi_mot.py`  
+📌 **Code source final** de `serveur_battleship.py` et `client_battleship.py`  
 📌 **Fichier `test_multijoueur.py` fonctionnel**  
-📌 **Un rapport expliquant :**
-
-- Comment fonctionne l'échange de données entre client et serveur
-- Les problèmes de synchronisation et comment ils ont été résolus
-- Les tests réalisés pour valider votre implémentation
+📌 **Un rapport expliquant :**  
+   - Comment fonctionne l'échange de données entre client et serveur.  
+   - Les problèmes de synchronisation et comment ils ont été résolus.  
+   - Les tests réalisés pour valider votre implémentation.  
 
 ---
 
 ### **Phase 3 : Intelligence Artificielle**
-
 📌 **Code source final** de `joueur_virtuel.py`  
-📌 **Un rapport expliquant :**
-
-- Les stratégies utilisées pour l'IA (fréquence des lettres, filtrage des mots possibles, prise de décision)
-- Les performances de l'IA (taux de réussite, temps moyen pour deviner un mot)
-- Une comparaison avec un joueur humain (si possible)
+📌 **Un rapport expliquant :**  
+   - Les stratégies utilisées pour l'IA (placement des bateaux, analyse des tirs précédents, prise de décision).  
+   - Les performances de l'IA (taux de réussite, nombre moyen de tirs pour couler un adversaire).  
+   - Une comparaison avec un joueur humain (si possible).  
 
 ---
 
