@@ -1,17 +1,17 @@
-# **📜 Projet d'IA – "Création d'un Joueur Virtuel pour le Défi du Mot Mystère"** 🤖🧠
+# 🤖 **Projet d'IA – Création d'un Joueur Virtuel pour Battle Ship Royale** 🧠
 
 📁 **Fichier principal : `joueur_virtuel.py`**  
-📄 **Fichier : `Phase_4_Consignes.pdf`**
+📄 **Fichier : `Phase_3_Consignes.pdf`**
 
 ---
 
-## **🌍 Contexte**
+## 🌍 **Contexte**
 
-Dans ce projet, vous allez concevoir un **joueur virtuel** capable de jouer au "Défi du Mot Mystère". Ce joueur devra utiliser des stratégies algorithmiques pour deviner les mots mystères de manière efficace. À la fin, vos joueurs virtuels s’affronteront dans un tournoi pour déterminer la meilleure stratégie. En option, vous pourrez également permettre à vos IA de coopérer ou de s’affronter en ligne grâce à un mode multijoueur basé sur les sockets.
+Dans ce projet, vous allez concevoir un **joueur virtuel** capable de jouer au "Battle Ship Royale". Ce joueur devra utiliser des stratégies algorithmiques pour placer ses bateaux, analyser la grille adverse et tirer de manière efficace. À la fin, vos joueurs virtuels s’affronteront dans un tournoi pour déterminer la meilleure stratégie. En option, vous pourrez également permettre à vos IA de s’affronter en réseau grâce à un mode multijoueur basé sur les sockets.
 
 ---
 
-## **1️⃣ Objectifs pédagogiques**
+## **Objectifs pédagogiques**
 
 - Décomposer un problème complexe en sous-problèmes gérables.
 - Concevoir des algorithmes pour résoudre des problèmes spécifiques.
@@ -21,181 +21,134 @@ Dans ce projet, vous allez concevoir un **joueur virtuel** capable de jouer au "
 
 ---
 
-## **2️⃣ Fonctionnalités attendues**
+## **Fonctionnalités attendues**
 
-Vous devez implémenter une classe `JoueurVirtuel` qui représente un joueur intelligent capable de jouer au "Défi du Mot Mystère". Cette classe doit inclure les fonctionnalités suivantes :
+Vous devez implémenter une classe `JoueurVirtuel` représentant un joueur intelligent capable de jouer à "Battle Ship Royale". Cette classe doit inclure les fonctionnalités suivantes :
 
-1. **Analyse des fréquences des lettres** : Identifier les lettres les plus fréquentes dans le dictionnaire pour guider les propositions.
-2. **Filtrage des mots possibles** : Réduire la liste des mots candidats en fonction du mot partiellement dévoilé.
-3. **Proposition de lettres et de mots** : Décider si le joueur propose une lettre ou tente de deviner un mot entier.
-4. **Gestion de la mémoire** : Retenir les mots déjà rencontrés pour améliorer l'efficacité au fil des parties.
+1. **Placement stratégique des bateaux** : Choisir les meilleures positions pour minimiser les risques.
+2. **Analyse des tirs précédents** : Identifier les zones les plus prometteuses à cibler.
+3. **Choix intelligent des tirs** : Décider où tirer pour maximiser les chances de toucher un bateau adverse.
+4. **Gestion de la mémoire** : Retenir les résultats des tirs précédents pour améliorer la stratégie.
 5. **Stratégie adaptative** : Ajuster les décisions en fonction des résultats obtenus.
 
-En option, vos IA pourront coopérer ou s’affronter en ligne dans un mode multijoueur.
+En option, vos IA pourront s’affronter en réseau dans un mode multijoueur.
 
 ---
 
-## **3️⃣ Structure du code attendu**
+## **Structure du code attendu**
 
 Voici une architecture de base pour structurer votre code :
 
 ```python
 class JoueurVirtuel:
-    def __init__(self, dictionnaire):
+    def __init__(self, taille_grille):
         """
-        Initialise le joueur virtuel avec un dictionnaire de mots.
-        :param dictionnaire: Liste de mots disponibles dans le jeu.
-        """
-        pass
-
-    def analyser_frequences_lettres(self):
-        """
-        Analyse la fréquence des lettres dans le dictionnaire et stocke les résultats.
+        Initialise le joueur virtuel avec une grille.
+        :param taille_grille: Taille de la grille (ex: 5 pour une grille 5x5).
         """
         pass
 
-    def filtrer_mots_possibles(self, mot_actuel):
+    def placer_bateaux(self):
         """
-        Filtre les mots du dictionnaire correspondant au motif actuel.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Liste des mots possibles.
+        Place stratégiquement les bateaux sur la grille.
         """
         pass
 
-    def choisir_meilleure_lettre(self, mot_actuel, lettres_essayees):
+    def analyser_tirs_precedents(self, historique_tirs):
         """
-        Choisit la meilleure lettre à proposer en fonction des lettres déjà essayées.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :return: Une lettre à essayer.
+        Analyse l'historique des tirs pour améliorer la stratégie.
+        :param historique_tirs: Liste des tirs déjà effectués avec résultats.
         """
         pass
 
-    def evaluer_risque_mot_entier(self, mot_actuel):
+    def choisir_position_tir(self, historique_tirs):
         """
-        Évalue le risque de proposer un mot entier en fonction des mots possibles restants.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Un booléen indiquant si proposer un mot entier est raisonnable.
-        """
-        pass
-
-    def proposer_lettre(self, mot_actuel, lettres_essayees):
-        """
-        Propose une lettre à essayer.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :return: Une lettre à essayer.
+        Choisit la meilleure position pour le prochain tir.
+        :param historique_tirs: Liste des tirs déjà effectués avec résultats.
+        :return: Coordonnées du prochain tir (ligne, colonne).
         """
         pass
 
-    def proposer_mot(self, mot_actuel):
+    def mise_a_jour_strategie(self, resultat_tir):
         """
-        Propose un mot entier si le risque est acceptable.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Un mot entier ou None si aucune proposition n'est faite.
-        """
-        pass
-
-    def mise_a_jour(self, resultat):
-        """
-        Met à jour la mémoire et les stratégies en fonction du résultat précédent.
-        :param resultat: Dictionnaire contenant des informations sur la validité de l'action précédente.
-                         Exemple: {"action": "lettre", "valide": True, "mot": "_ A _ _ E"}
+        Met à jour la stratégie selon le résultat du tir précédent.
+        :param resultat_tir: Résultat du tir précédent.
         """
         pass
 
-    def jouer_tour(self, mot_actuel, lettres_essayees, temps_restant):
+    def jouer_tour(self, historique_tirs):
         """
-        Décide de l'action à effectuer pour ce tour (proposer une lettre ou un mot).
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :param temps_restant: Temps restant pour deviner le mot (en secondes).
-        :return: Une action sous forme de tuple ("lettre", "A") ou ("mot", "APPLE").
+        Décide de l'action pour ce tour (position de tir).
+        :param historique_tirs: Historique complet des tirs.
+        :return: Coordonnées du tir choisi (ligne, colonne).
         """
         pass
 ```
 
 ---
 
-## **4️⃣ Étapes et indices**
+## **Étapes et indices**
 
-### **Étape 1 – Analyse des fréquences des lettres**
+### **Étape 1 – Placement stratégique des bateaux**
 
-- Objectif : Identifier les lettres les plus fréquentes dans le dictionnaire pour guider les propositions du joueur virtuel.
-- Indices :
-  - Pensez à parcourir tous les mots du dictionnaire et à compter combien de fois chaque lettre apparaît. Une structure comme un dictionnaire Python peut être utile ici.
-
----
-
-### **Étape 2 – Filtrage des mots possibles**
-
-- Objectif : Réduire la liste des mots candidats en fonction du motif actuel (exemple : `_ A _ _ E`).
-- Indices :
-  - Imaginez que chaque `_` représente une lettre inconnue. Comment pourriez-vous vérifier si un mot correspond au motif ?
-  - Les expressions régulières peuvent être utiles ici.
+- Objectif : Positionner les bateaux pour minimiser les risques.
+- Indices : Répartissez vos bateaux pour éviter les regroupements faciles à détecter.
 
 ---
 
-### **Étape 3 – Proposition d’une lettre**
+### **Étape 2 – Analyse des tirs précédents**
 
-- Objectif : Choisir la prochaine lettre à proposer parmi celles qui n’ont pas encore été essayées.
-- Indices :
-  - En utilisant les fréquences calculées à l’étape 1, quelle lettre non encore essayée maximiserait vos chances ?
-  - Pensez également à éviter les doublons.
+- Objectif : Identifier les zones à cibler en priorité.
+- Indices : Utilisez les résultats antérieurs (touchés/manqués) pour adapter vos tirs suivants.
 
 ---
 
-### **Étape 4 – Proposition d’un mot entier**
+### **Étape 3 – Choix intelligent des tirs**
 
-- Objectif : Décider s’il est raisonnable de tenter un mot entier et lequel proposer.
-- Indices :
-  - Si vous n’avez qu’un ou deux mots possibles après filtrage, cela pourrait être une bonne idée d’essayer directement un mot entier.
-
----
-
-### **Étape 5 – Mémoire et adaptation**
-
-- Objectif : Améliorer l’efficacité au fil des parties en mémorisant les succès et échecs précédents.
-- Indices :
-  - Vous pouvez utiliser une structure comme un dictionnaire Python pour associer chaque mot mystère rencontré à sa solution correcte.
+- Objectif : Maximiser les chances de toucher un bateau.
+- Indices : Après un tir touché, essayez les cases voisines en priorité.
 
 ---
 
-## **5️⃣ Section optionnelle – Mode multijoueur avec sockets**
+### **Étape 4 – Mémoire et adaptation**
 
-Pour aller plus loin, vous pouvez permettre à vos IA :
+- Objectif : Améliorer l'efficacité en mémorisant les succès et échecs.
+- Indices : Stockez l'historique des résultats pour éviter les répétitions inutiles.
 
-1. De coopérer pour deviner ensemble un maximum de mots dans un temps imparti (mode coopératif).
-2. De s’affronter directement pour voir laquelle devine le plus rapidement (mode compétitif).
+---
+
+## **Section optionnelle – Mode multijoueur avec sockets**
+
+Vous pouvez permettre à vos IA de s’affronter directement en réseau :
 
 ### Mise en œuvre :
 
-1. Reprenez le code serveur/client basé sur les sockets proposé dans le sujet précédent :
+1. Utilisez le code serveur/client avec sockets de la phase précédente.
+   - Le serveur coordonne les parties.
+   - Les clients représentent vos IA communiquant via sockets.
 
-   - Le serveur gère l’état global du jeu (mot mystère, scores).
-   - Les clients représentent vos IA qui communiquent avec le serveur via sockets.
+2. Adaptez votre classe `JoueurVirtuel` pour interagir avec le serveur :
+   - Envoyer les tirs au serveur.
+   - Recevoir l'état du jeu du serveur.
 
-2. Adaptez votre classe `JoueurVirtuel` pour qu’elle puisse interagir avec le serveur :
-
-   - Envoyer ses propositions (lettres ou mots) au serveur.
-   - Recevoir l’état mis à jour du jeu depuis le serveur.
-
-3. Organisez une simulation où plusieurs IA coopèrent ou s’affrontent en ligne.
+3. Organisez un tournoi en réseau entre plusieurs IA.
 
 ---
 
-## **6️⃣ Tournoi final**
+## **Tournoi final**
 
 ### Règles :
 
-1. Chaque joueur virtuel joue contre tous les autres joueurs sur un ensemble fixe de mots mystères.
-2. Les parties peuvent être locales ou en ligne via sockets (si vous avez implémenté l’option).
-3. Le joueur qui devine le plus de mots gagne la partie.
+1. Chaque joueur virtuel affronte les autres dans des parties définies.
+2. Les parties peuvent être locales ou réseau (optionnel).
+3. Le joueur qui coule le plus vite les bateaux adverses remporte la victoire.
 
 ### Critères d’évaluation :
 
-- Nombre total de mots devinés.
-- Temps moyen par mot deviné.
-- Taux d’erreur (propositions incorrectes).
+- Nombre de victoires.
+- Nombre moyen de tirs nécessaires pour gagner.
+- Précision (rapport tirs touchés/tirs totaux).
 
 ---
+
+**Bonne programmation !**

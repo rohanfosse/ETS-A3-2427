@@ -1,51 +1,51 @@
-# **Défi du Mot Mystère - Guide de Développement**
+# 🚢 **Battle Ship Royale - Guide de Développement**
 
 ## **Introduction**
 
-Ce projet vise à développer un **jeu de devinette de mots** en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
+Ce projet vise à développer un **jeu de bataille navale interactif** en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
 
 Chaque phase introduit des concepts essentiels en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
 
 ---
 
-## **📄 Planning du Projet - Défi du Mot Mystère (1 Semaine)**  
+## **📄 Planning du Projet - Battle Ship Royale (1 Semaine)**  
 
 | Jour | Matin (8h30 - 12h30) | Après-midi (13h30 - 17h30) | Début et fin des Phases |
 |------|----------------------|---------------------------|---------------------------|
-| **Lundi** | 🎯 **Présentation du projet** (Objectifs, organisation, livrables) <br> ⚙️ **Mise en place de l’environnement (Git, venv)** <br> 🔹 **[Cours POO](Ressources_Utiles/01-POO/README.md)** | 📝 **[Exercices POO](Ressources_Utiles/01-POO/exercices/)** <br> 🛠 **Implémentation du jeu solo (gestion des mots, affichage, chrono)** <br> ✅ **Finalisation et tests du mode solo** | **Phase 1 : Début et Fin** |
-| **Mardi** | 🔹 **[Cours Réseau](Ressources_Utiles/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercice Client-Serveur](Ressources_Utiles/02-Programmation_Reseau/exercices/)** | 🛠 **Développement multijoueur** (Serveur + Clients) <br> 🔄 **Test du serveur et des connexions** | **Phase 2 : Début** |
-| **Mercredi** | 🔗 **Gestion des connexions multiples** <br> 🛠 **Débogage et amélioration multijoueur** | ✅ **[Tests unitaires avec PyTest](Ressources_Utiles/03-PyTest/README.md)** <br> 🛠 **Validation du mode multijoueur** <br> 🔍 **Corrections finales** | **Phase 2 : Fin** |
-| **Jeudi** | ✅ **Validation complète du projet** <br> 🤖 **Début du développement IA (Fréquences des lettres, analyse des mots possibles)** | *(Pas de cours l’après-midi)* | **Phase 3 : Début** |
-| **Vendredi** | 🛠 **Optimisation et tests IA** <br> 📊 **Analyse et ajustements** | 🏆 **Concours IA : Matchs et comparaison des stratégies** | **Phase 3 : Fin** |
+| **Lundi** | 🎯 **Présentation du projet** (Objectifs, organisation, livrables) <br> ⚙️ **Installation de l’environnement de développement (Git, venv)** <br> 🔹 **[Cours Programmation Orientée Objet (POO)](Ressources_Utiles/01-POO/README.md)** | 📝 **[Exercices POO](Ressources_Utiles/01-POO/exercices/)** <br> 🛠 **Développement du jeu solo (grille, placement des bateaux, tirs)** <br> ✅ **Tests et validation du mode solo** | **Phase 1 : Début et Fin** |
+| **Mardi** | 🔹 **[Cours Programmation Réseau](Ressources_Utiles/02-Programmation_Reseau/README.md)** <br> 🖧 **[Exercices Client-Serveur](Ressources_Utiles/02-Programmation_Reseau/exercices/)** | 🛠 **Implémentation du multijoueur réseau** (Serveur + Clients) <br> 🔄 **Validation du serveur et gestion des connexions** | **Phase 2 : Début** |
+| **Mercredi** | 🔗 **Gestion avancée des connexions multiples** <br> 🛠 **Débogage et optimisation du mode multijoueur** | ✅ **[Tests unitaires avec PyTest](Ressources_Utiles/03-PyTest/README.md)** <br> 🛠 **Finalisation et tests approfondis** <br> 🔍 **Corrections et améliorations finales** | **Phase 2 : Fin** |
+| **Jeudi** | ✅ **Validation intermédiaire du projet** <br> 🤖 **Introduction à l’Intelligence Artificielle (stratégies et prédiction)** | *(Après-midi libre)* | **Phase 3 : Début** |
+| **Vendredi** | 🛠 **Développement et amélioration IA** <br> 📊 **Tests, optimisation et analyse des résultats** | 🏆 **Tournoi IA : Évaluation et comparaison des stratégies** | **Phase 3 : Fin** |
 
 ---
 
 ## **1. Résumé des Phases du Projet**
 
-Le projet est divisé en trois phases. Vous devez les réaliser dans l’ordre en complétant le code fourni dans chaque dossier.
+Le projet se déroule en trois phases progressives à réaliser dans l’ordre.
 
 | Phase | Objectif | Lien vers les consignes |
 |-------|---------|------------------------|
-| **Phase 1 : Version Solo** | Implémenter un jeu où un joueur tente de deviner des mots en un temps limité. | [Consignes Phase 1](Phase_1_Fondamentaux/Phase_1_Consignes.md) |
-| **Phase 2 : Mode Multijoueur** | Modifier le jeu pour permettre à plusieurs joueurs de jouer en réseau via un serveur. | [Consignes Phase 2](Phase_2_Multijoueurs/Phase_2_Consignes.md) |
-| **Phase 3 : Intelligence Artificielle** | Développer un joueur virtuel capable de deviner les mots avec des stratégies avancées. | [Consignes Phase 3](Phase_3_IA/Phase_3_Consignes.md) |
+| **Phase 1 : Version Solo** | Jeu solo avec un adversaire virtuel simple. | [Consignes Phase 1](Phase_1_Fondamentaux/Phase_1_Consignes.md) |
+| **Phase 2 : Mode Multijoueur** | Ajout du multijoueur réseau avec gestion simultanée des joueurs. | [Consignes Phase 2](Phase_2_Multijoueurs/Phase_2_Consignes.md) |
+| **Phase 3 : Intelligence Artificielle** | Développement d’une IA capable de jouer efficacement et d'apprendre des stratégies de jeu. | [Consignes Phase 3](Phase_3_IA/Phase_3_Consignes.md) |
 
-Vous devez suivre ces étapes dans l’ordre et implémenter progressivement les fonctionnalités demandées.
+Vous devez respecter cet ordre pour implémenter progressivement chaque fonctionnalité.
 
 ---
 
 ## **2. Organisation du Projet**
 
-Le projet est structuré comme suit :
+Le projet est organisé de la façon suivante :
 
 ```text
 ├── Phase_1_Fondamentaux
 │   ├── Phase_1_Consignes.md
-│   └── defi_mot_initial.py
+│   └── battleship_initial.py
 ├── Phase_2_Multijoueurs
 │   ├── Phase_2_Consignes.md
-│   ├── client_defi_mot.py
-│   ├── serveur_defi_mot.py
+│   ├── client_battleship.py
+│   ├── serveur_battleship.py
 │   └── test_multijoueur.py
 ├── Phase_3_IA
 │   ├── Phase_3_Consignes.md
@@ -53,11 +53,13 @@ Le projet est structuré comme suit :
 └── README.md
 ```
 
-Chaque phase comprend :
+Chaque dossier inclut :
 
-- **Un fichier de consignes détaillé** (`Phase_X_Consignes.md`).
-- **Un squelette de code** (`.py`) à compléter et enrichir.
-- **D'éventuels fichiers de tests** (`test_*.py`).
+- Un fichier détaillé avec les consignes (`Phase_X_Consignes.md`).
+- Un fichier Python de base (`.py`) à enrichir.
+- Éventuellement, des fichiers de test (`test_*.py`).
+
+Vous pouvez ajouter d’autres fichiers ou dossiers si nécessaire pour organiser votre code.
 
 ---
 
@@ -121,7 +123,7 @@ Tout au long du projet, plusieurs livrables peuvent être demandés pour évalue
 
 ### **Phase 1 : Version Solo**
 
-📌 **Code source final** de `defi_mot_initial.py`  
+📌 **Code source final** de `battleship_initial.py`
 📌 **Documentation du code** sous forme de commentaires  
 📌 **Un rapport (PDF ou Markdown) expliquant :**
 

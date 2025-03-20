@@ -1,73 +1,43 @@
 class JoueurVirtuel:
-    def __init__(self, dictionnaire):
+    def __init__(self, taille_grille):
         """
-        Initialise le joueur virtuel avec un dictionnaire de mots.
-        :param dictionnaire: Liste de mots disponibles dans le jeu.
-        """
-        pass
-
-    def analyser_frequences_lettres(self):
-        """
-        Analyse la fréquence des lettres dans le dictionnaire et stocke les résultats.
+        Initialise le joueur virtuel avec une grille.
+        :param taille_grille: Taille de la grille (ex: 5 pour une grille 5x5).
         """
         pass
 
-    def filtrer_mots_possibles(self, mot_actuel):
+    def placer_bateaux(self):
         """
-        Filtre les mots du dictionnaire correspondant au motif actuel.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Liste des mots possibles.
+        Place stratégiquement les bateaux sur la grille.
         """
         pass
 
-    def choisir_meilleure_lettre(self, mot_actuel, lettres_essayees):
+    def analyser_tirs_precedents(self, historique_tirs):
         """
-        Choisit la meilleure lettre à proposer en fonction des lettres déjà essayées.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :return: Une lettre à essayer.
+        Analyse l'historique des tirs pour améliorer la stratégie.
+        :param historique_tirs: Liste des tirs déjà effectués avec résultats.
         """
         pass
 
-    def evaluer_risque_mot_entier(self, mot_actuel):
+    def choisir_position_tir(self, historique_tirs):
         """
-        Évalue le risque de proposer un mot entier en fonction des mots possibles restants.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Un booléen indiquant si proposer un mot entier est raisonnable.
-        """
-        pass
-
-    def proposer_lettre(self, mot_actuel, lettres_essayees):
-        """
-        Propose une lettre à essayer.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :return: Une lettre à essayer.
+        Choisit la meilleure position pour le prochain tir.
+        :param historique_tirs: Liste des tirs déjà effectués avec résultats.
+        :return: Coordonnées du prochain tir (ligne, colonne).
         """
         pass
 
-    def proposer_mot(self, mot_actuel):
+    def mise_a_jour_strategie(self, resultat_tir):
         """
-        Propose un mot entier si le risque est acceptable.
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :return: Un mot entier ou None si aucune proposition n'est faite.
-        """
-        pass
-
-    def mise_a_jour(self, resultat):
-        """
-        Met à jour la mémoire et les stratégies en fonction du résultat précédent.
-        :param resultat: Dictionnaire contenant des informations sur la validité de l'action précédente.
-                         Exemple: {"action": "lettre", "valide": True, "mot": "_ A _ _ E"}
+        Met à jour la stratégie selon le résultat du tir précédent.
+        :param resultat_tir: Résultat du tir précédent.
         """
         pass
 
-    def jouer_tour(self, mot_actuel, lettres_essayees, temps_restant):
+    def jouer_tour(self, historique_tirs):
         """
-        Décide de l'action à effectuer pour ce tour (proposer une lettre ou un mot).
-        :param mot_actuel: Mot partiellement dévoilé (ex: "_ A _ _ E").
-        :param lettres_essayees: Lettres déjà proposées.
-        :param temps_restant: Temps restant pour deviner le mot (en secondes).
-        :return: Une action sous forme de tuple ("lettre", "A") ou ("mot", "APPLE").
+        Décide de l'action pour ce tour (position de tir).
+        :param historique_tirs: Historique complet des tirs.
+        :return: Coordonnées du tir choisi (ligne, colonne).
         """
         pass

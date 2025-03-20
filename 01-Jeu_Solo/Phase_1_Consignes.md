@@ -1,14 +1,14 @@
-# **Mini-Projet de Validation – "Défi du Mot Mystère"**
+# 🚢 **Mini-Projet de Validation – "Battle Ship Royale Solo"**
 
 ## **Contexte**
 
-Ce projet consiste à développer un jeu où le joueur doit **deviner un maximum de mots dans un temps limité** (exemple : **2 minutes**).
+Ce projet consiste à développer une version solo du jeu **Battle Ship Royale**, dans lequel le joueur affronte un adversaire virtuel simple.
 
-- Le joueur peut proposer **une lettre à la fois** pour découvrir progressivement le mot.
-- **S’il pense connaître le mot**, il peut tenter de l’écrire en entier.
-- **Une mauvaise proposition de mot entraîne une pénalité de temps**.
-- **À chaque mot trouvé, un nouveau mot est généré immédiatement**.
-- **Le score final est basé sur le nombre de mots trouvés et les erreurs commises**.
+- Le joueur place ses bateaux sur une grille de jeu.
+- Le joueur et l'adversaire virtuel tirent à tour de rôle pour tenter de couler les bateaux adverses.
+- Chaque tir touche ou rate, et l'objectif est de couler tous les bateaux adverses en premier.
+- Une gestion visuelle simplifiée de la grille permet au joueur de suivre l'état du jeu.
+- Le score final est basé sur le nombre de tirs nécessaires pour couler tous les bateaux adverses.
 
 Ce projet doit être réalisé **en autonomie** en complétant le code fourni.
 
@@ -18,11 +18,11 @@ Ce projet doit être réalisé **en autonomie** en complétant le code fourni.
 
 ## **Objectifs pédagogiques**
 
-- **Manipuler les structures de données** : listes, dictionnaires, fichiers texte.  
-- **Utiliser les boucles et conditions pour créer un jeu interactif**.  
-- **Gérer un fichier de mots et sélectionner aléatoirement un mot**.  
-- **Créer une interaction en temps réel avec gestion d’un chronomètre**.  
-- **Gérer une pénalité sur une mauvaise réponse**.
+- **Manipuler des structures de données** : listes, matrices, dictionnaires.
+- **Utiliser les boucles et conditions pour gérer un jeu interactif**.
+- **Implémenter la logique de placement et de gestion des bateaux**.
+- **Créer une interaction tour par tour claire et intuitive**.
+- **Gérer l'état du jeu et détecter la fin d'une partie**.
 
 ---
 
@@ -30,31 +30,26 @@ Ce projet doit être réalisé **en autonomie** en complétant le code fourni.
 
 ### **Déroulement d’une partie**
 
-1. Un **mot mystère est choisi aléatoirement** depuis un fichier contenant **1000 mots**.
-2. Le joueur peut :
-   - Proposer une **lettre** pour voir si elle est dans le mot.
-   - **Taper un mot entier** s’il pense avoir deviné.
-   - **S’il se trompe sur un mot entier, une pénalité de 5 secondes est appliquée**.
-3. Une fois le mot trouvé, **un autre mot apparaît immédiatement**.
-4. **L’objectif est de trouver le plus de mots possible avant la fin du temps imparti**.
+1. Le joueur place ses bateaux sur une grille de jeu.
+2. L'adversaire virtuel place également ses bateaux aléatoirement.
+3. Le joueur et l'adversaire tirent à tour de rôle en essayant de deviner les positions des bateaux adverses.
+4. Chaque tir est indiqué comme **touché** ou **manqué**.
+5. L'objectif est de couler tous les bateaux adverses en premier.
 
 ### **Calcul du score**
 
-- **+1 point** par mot trouvé.
-- **-5 secondes** si le joueur propose un mot incorrect.
-- **Affichage du score final à la fin du temps**.
+- **Score basé sur le nombre total de tirs effectués** : Moins il y a de tirs, meilleur est le score.
 
 ---
 
 ## **Fonctionnalités du jeu**
 
-- Sélectionner **aléatoirement un mot** depuis un fichier de **1000 mots** (`mots.txt`).
-- **Afficher le mot partiellement masqué** (`M _ T _ U R E`).
-- **Permettre au joueur de proposer des lettres ou un mot entier**.
-- **Gérer les mauvaises propositions avec des pénalités de temps**.
-- **Gérer un chronomètre en temps réel** (exemple : **2 minutes**).
-- **Générer un nouveau mot dès qu’un mot est trouvé**.
-- **Afficher le score final et le nombre de mots trouvés**.
+- Placement manuel ou automatique des bateaux sur la grille.
+- Tir alterné joueur/adversaire avec gestion des résultats (touché/coulé/manqué).
+- Affichage clair et mis à jour de la grille de jeu après chaque tour.
+- Gestion automatique des tirs de l'adversaire virtuel.
+- Détection de la fin du jeu lorsque tous les bateaux sont coulés.
+- Affichage du score final.
 
 ---
 
@@ -63,81 +58,61 @@ Ce projet doit être réalisé **en autonomie** en complétant le code fourni.
 ### **Scénario 1 – Début d’une partie**
 
 ```
-Bienvenue dans le Défi du Mot Mystère !
+Bienvenue dans Battle Ship Royale Solo !
 
-Objectif : Devinez un maximum de mots en 120 secondes.
-Vous pouvez entrer une lettre OU deviner le mot entier.
-Attention : Une mauvaise réponse sur un mot entier entraîne une pénalité de -5 secondes.
+Placez vos bateaux sur la grille pour commencer.
+Grille actuelle :
 
-Un mot mystère a été choisi...
-Mot actuel : _ _ _ _ _ _ _
-Temps restant : 120s
-Entrez une lettre ou un mot : T
+  0 1 2 3 4
+0 ~ ~ ~ ~ ~
+1 ~ ~ ~ ~ ~
+2 ~ ~ ~ ~ ~
+3 ~ ~ ~ ~ ~
+4 ~ ~ ~ ~ ~
+
+Entrez la position initiale de votre bateau (format ligne,colonne) : 1,1
 ```
 
 ---
 
-### **Scénario 2 – Révélation progressive du mot**
+### **Scénario 2 – Tir et résultat**
 
 ```
-Mot actuel : _ _ T _ _ _
-Temps restant : 110s
-Lettres essayées : T
-Entrez une lettre ou un mot : A
+À votre tour de tirer !
+Grille actuelle des tirs :
 
-Bonne réponse !
-Mot actuel : _ A T _ _ _
-Temps restant : 108s
-Entrez une lettre ou un mot : X
+  0 1 2 3 4
+0 X ~ ~ ~ ~
+1 ~ O ~ ~ ~
+2 ~ ~ ~ ~ ~
+3 ~ ~ ~ ~ ~
+4 ~ ~ ~ ~ ~
 
-Mauvaise réponse !
-Mot actuel : _ A T _ _ _
-Lettres essayées : T, A, X
-Erreurs : 1
-Temps restant : 105s
+Entrez la position du tir (ligne,colonne) : 0,1
+
+Résultat : Touché !
 ```
 
 ---
 
-### **Scénario 3 – Deviner un mot entier**
+### **Scénario 3 – Coulé un bateau adverse**
 
 ```
-Mot actuel : M A T _ _ _
-Temps restant : 95s
-Entrez une lettre ou un mot : MATURE
+Entrez la position du tir (ligne,colonne) : 0,2
 
-Bravo ! Vous avez trouvé le mot "MATURE" !
-+1 point
-Nouveau mot généré...
-Mot actuel : _ _ _ _ _
-Temps restant : 94s
+Résultat : Coulé ! Vous avez coulé un bateau adverse !
 ```
 
 ---
 
-### **Scénario 4 – Mauvaise réponse avec pénalité**
+### **Scénario 4 – Fin du jeu**
 
 ```
-Mot actuel : B _ _ _ _ _
-Temps restant : 50s
-Entrez une lettre ou un mot : BOUTONNER
-
-Mauvaise réponse !
-Pénalité de -5s !
-Temps restant : 45s
-```
-
----
-
-### **Scénario 5 – Fin du jeu**
-
-```
-Temps écoulé !
+Félicitations, vous avez gagné !
 
 Score final :
-- Mots trouvés : 7
-- Mots ratés : 2
-- Pénalités de temps : -10 secondes
+- Nombre total de tirs : 15
+- Bateaux adverses coulés : 3/3
 ```
 
 ---
@@ -147,39 +122,31 @@ Score final :
 📂 `Phase_1_Fondamentaux/`
 
 ```
-│── Phase_1_Consignes.md    # Instructions détaillées
-│── mots.txt                # Fichier contenant 1000 mots
-│── defi_mot_initial.py      # Code de base à compléter
-│── test_defi_mot.py         # Tests unitaires pour valider le jeu
+│── Phase_1_Consignes.md     # Instructions détaillées
+│── battleship_initial.py    # Code de base à compléter
+│── test_battleship.py       # Tests unitaires pour valider le jeu
 ```
-
-### **Fichier `mots.txt`**
-
-- Contient **1000 mots aléatoires** (exemples : "MAISON", "ORDINATEUR", "PYTHON", "CERVEAU"…).
-- Chaque mot doit être **en majuscules et sans accents** pour simplifier la gestion.
 
 ---
 
 ## **Livrables attendus**
 
-📌 **Code source final** de `defi_mot_initial.py`  
+📌 **Code source final** de `battleship_initial.py`  
 📌 **Documentation du code** sous forme de commentaires  
 📌 **Un rapport expliquant :**
 
-- L’architecture du programme (comment vous avez structuré votre code).
+- L’architecture du programme.
 - Les choix techniques effectués.
-- Les difficultés rencontrées et les solutions trouvées.
+- Les difficultés rencontrées et solutions apportées.
 
 ---
 
 ## **Conseils pour réussir**
 
-- **Testez régulièrement votre code** : Ne développez pas tout d’un coup sans vérifier son bon fonctionnement.
-- **Commencez par des fonctionnalités simples**, puis ajoutez les optimisations.
-- **Utilisez des affichages (`print()`) pour déboguer** et voir où ça bloque.
-- **Commentez votre code** pour faciliter sa compréhension.
-- **Anticipez les erreurs possibles** (mauvaises entrées utilisateur, fin du temps imparti, etc.).
+- **Testez votre code régulièrement**.
+- **Développez progressivement** : commencez par les fonctions de base avant d’ajouter des complexités.
+- **Utilisez des affichages (`print()`) pour faciliter le débogage**.
+- **Commentez clairement votre code** pour en faciliter la compréhension.
+- **Anticipez et gérez les cas d'erreurs** possibles (entrées utilisateur incorrectes, vérifications de conditions de fin de jeu, etc.).
 
 ---
-
-**Bonne programmation !**
