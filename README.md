@@ -98,6 +98,7 @@ pip install -r requirements.txt
 
 ---
 
+<<<<<<< HEAD
 ## **5. Livrables à Rendre par Binôme**
 
 ### **Phase 1 : Version Solo**
@@ -147,6 +148,38 @@ pip install -r requirements.txt
 - [Guide `pytest`](https://docs.pytest.org/en/stable/)
 - [Debugging en Python](https://realpython.com/python-debugging-pdb/)
 - [Heuristiques IA](https://en.wikipedia.org/wiki/Heuristic_(computer_science))
+=======
+## **5.Livrables à Rendre**
+
+Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail.
+
+### **Phase 1 : Version Solo**
+📌 **Code source final** de `battleship_initial.py`  
+📌 **Documentation du code** sous forme de commentaires  
+📌 **Un rapport (PDF ou Markdown) expliquant :**  
+   - L’architecture du programme (comment vous avez structuré votre code).  
+   - Les choix techniques effectués.  
+   - Les difficultés rencontrées et les solutions trouvées.  
+
+---
+
+### **Phase 2 : Mode Multijoueur**
+📌 **Code source final** de `serveur_battleship.py` et `client_battleship.py`  
+📌 **Fichier `test_multijoueur.py` fonctionnel**  
+📌 **Un rapport expliquant :**  
+   - Comment fonctionne l'échange de données entre client et serveur.  
+   - Les problèmes de synchronisation et comment ils ont été résolus.  
+   - Les tests réalisés pour valider votre implémentation.  
+
+---
+
+### **Phase 3 : Intelligence Artificielle**
+📌 **Code source final** de `joueur_virtuel.py`  
+📌 **Un rapport expliquant :**  
+   - Les stratégies utilisées pour l'IA (placement des bateaux, analyse des tirs précédents, prise de décision).  
+   - Les performances de l'IA (taux de réussite, nombre moyen de tirs pour couler un adversaire).  
+   - Une comparaison avec un joueur humain (si possible).  
+>>>>>>> ad8c50e0270239b664679d4b0032d8a59b408ee4
 
 ---
 
