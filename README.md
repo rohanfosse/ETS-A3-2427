@@ -1,10 +1,10 @@
-# 🚢 **Battle Ship Royale - Guide de Développement**
+# 🚢 **Battle Ship Royale - Guide de Développement en Binôme**
 
 ## **Introduction**
 
-Ce projet vise à développer un **jeu de bataille navale interactif** en trois phases progressives. Vous commencerez par une **version solo**, puis vous ajouterez un **mode multijoueur**, et enfin vous implémenterez une **intelligence artificielle** capable de jouer seule.
+Ce projet a pour objectif de développer, **en binôme**, un **jeu de bataille navale interactif** en trois phases progressives. Vous commencerez par une **version solo**, poursuivrez avec un **mode multijoueur**, et terminerez par l’implémentation d’une **intelligence artificielle** capable de jouer seule.
 
-Chaque phase introduit des concepts essentiels en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
+Chaque phase introduit des notions clés en **Python**, **programmation réseau (sockets)** et **intelligence artificielle appliquée aux jeux**.
 
 ---
 
@@ -22,7 +22,7 @@ Chaque phase introduit des concepts essentiels en **Python**, **programmation r�
 
 ## **1. Résumé des Phases du Projet**
 
-Le projet se déroule en trois phases progressives à réaliser dans l’ordre.
+Le projet se déroule en trois phases progressives à réaliser dans l’ordre, **en collaboration à deux**.
 
 | Phase | Objectif | Lien vers les consignes |
 |-------|---------|------------------------|
@@ -30,13 +30,11 @@ Le projet se déroule en trois phases progressives à réaliser dans l’ordre.
 | **Phase 2 : Mode Multijoueur** | Ajout du multijoueur réseau avec gestion simultanée des joueurs. | [Consignes Phase 2](Phase_2_Multijoueurs/Phase_2_Consignes.md) |
 | **Phase 3 : Intelligence Artificielle** | Développement d’une IA capable de jouer efficacement et d'apprendre des stratégies de jeu. | [Consignes Phase 3](Phase_3_IA/Phase_3_Consignes.md) |
 
-Vous devez respecter cet ordre pour implémenter progressivement chaque fonctionnalité.
-
 ---
 
 ## **2. Organisation du Projet**
 
-Le projet est organisé de la façon suivante :
+Le projet est structuré de la façon suivante :
 
 ```text
 ├── Phase_1_Fondamentaux
@@ -53,156 +51,111 @@ Le projet est organisé de la façon suivante :
 └── README.md
 ```
 
-Chaque dossier inclut :
-
-- Un fichier détaillé avec les consignes (`Phase_X_Consignes.md`).
-- Un fichier Python de base (`.py`) à enrichir.
-- Éventuellement, des fichiers de test (`test_*.py`).
-
-Vous pouvez ajouter d’autres fichiers ou dossiers si nécessaire pour organiser votre code.
+Chaque binôme peut ajouter des fichiers ou dossiers pour structurer son code.
 
 ---
 
-## **3. Utilisation d'un Environnement Virtuel**
+## **3. Environnement Virtuel Python**
 
-L'utilisation d'un **environnement virtuel** est recommandée pour :
+Pour faciliter le travail en binôme et garantir une cohérence des dépendances :
 
-- **Isoler les dépendances du projet** afin d’éviter les conflits avec d’autres projets Python installés sur votre machine.
-- **Assurer la reproductibilité** : un fichier `requirements.txt` permet d’installer exactement les mêmes versions de bibliothèques sur une autre machine.
-- **Travailler sur plusieurs versions de Python** sans interférer avec les installations globales.
-
-### **Création et activation de l’environnement**
-
-```sh
+```bash
 python -m venv env
-source env/bin/activate  # Sur macOS/Linux
-env\Scripts\activate  # Sur Windows
+source env/bin/activate  # macOS/Linux
+env\Scripts\activate     # Windows
 ```
 
-### **Installation des dépendances**
+Créer un fichier `requirements.txt` :
 
-Si des bibliothèques sont nécessaires, créez un fichier `requirements.txt` :
-
-```sh
+```bash
 pip freeze > requirements.txt
 ```
 
-Puis installez-les sur une autre machine avec :
+Et l’installer sur une autre machine :
 
-```sh
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## **4. ORessources_Utiles pour la Gestion du Projet en Solo**
-
-Même si vous travaillez seul, il est important de bien organiser votre travail. Voici quelques oRessources_Utiles utiles :
+## **4. Outils Collaboratifs Conseillés en Binôme**
 
 ### **Gestion du Code**
 
-- **GitHub / GitLab** : Versionner votre projet, sauvegarder vos évolutions et revenir à une version précédente en cas d’erreur.
-- **Commit régulier** : Faire des commits à chaque fonctionnalité importante permet d'éviter de perdre son travail.
-- **Utilisation des branches** (optionnel) : Travailler sur une fonctionnalité spécifique sans modifier directement le code principal.
+- **GitHub / GitLab** (avec un repo partagé)
+- Commits fréquents, clairs, avec une branche par fonctionnalité si besoin.
 
-### **Suivi du Développement**
+### **Organisation et Répartition des Tâches**
 
-- **Trello / Notion** : Organiser les tâches sous forme de tableau (To-Do, En cours, Terminé).
-- **Journal de bord** : Prendre des notes sur les problèmes rencontrés et les solutions trouvées.
+- **Notion / Trello** pour définir qui fait quoi
+- **Journal de bord commun** (markdown, Google Doc…) pour consigner vos choix et obstacles
 
 ### **Débogage et Tests**
 
-- **Logs (`print()`)** : Pour afficher l’évolution du programme et comprendre les erreurs.
-- **Pytest** : Pour écrire des tests automatisés et valider que le code fonctionne après chaque modification.
+- Utilisation de `print()` pour le suivi
+- Mise en place de **tests unitaires partagés** avec `pytest`
 
 ---
 
-## **5. Livrables à Rendre**
-
-Tout au long du projet, plusieurs livrables peuvent être demandés pour évaluer votre travail.
+## **5. Livrables à Rendre par Binôme**
 
 ### **Phase 1 : Version Solo**
 
-📌 **Code source final** de `battleship_initial.py`
-📌 **Documentation du code** sous forme de commentaires  
-📌 **Un rapport (PDF ou Markdown) expliquant :**
+📌 Code `battleship_initial.py`  
+📌 Documentation commentée  
+📌 Rapport technique (structure, choix, difficultés, rôles de chacun)
 
-- L’architecture du programme (comment vous avez structuré votre code)
-- Les choix techniques effectués
-- Les difficultés rencontrées et les solutions trouvées
+### **Phase 2 : Multijoueur**
 
----
+📌 Code client/serveur fonctionnel  
+📌 Tests réseau (`test_multijoueur.py`)  
+📌 Rapport expliquant les échanges réseau, synchronisation, répartition du travail
 
-### **Phase 2 : Mode Multijoueur**
+### **Phase 3 : IA**
 
-📌 **Code source final** de `serveur_defi_mot.py` et `client_defi_mot.py`  
-📌 **Fichier `test_multijoueur.py` fonctionnel**  
-📌 **Un rapport expliquant :**
-
-- Comment fonctionne l'échange de données entre client et serveur
-- Les problèmes de synchronisation et comment ils ont été résolus
-- Les tests réalisés pour valider votre implémentation
+📌 Code IA `joueur_virtuel.py`  
+📌 Rapport IA (stratégies, performances, comparaisons, rôles de chacun)
 
 ---
 
-### **Phase 3 : Intelligence Artificielle**
+## **6. Conseils pour Travailler Efficacement en Binôme**
 
-📌 **Code source final** de `joueur_virtuel.py`  
-📌 **Un rapport expliquant :**
-
-- Les stratégies utilisées pour l'IA (fréquence des lettres, filtrage des mots possibles, prise de décision)
-- Les performances de l'IA (taux de réussite, temps moyen pour deviner un mot)
-- Une comparaison avec un joueur humain (si possible)
-
----
-
-## **6. Conseils pour Réussir**
-
-- **Testez régulièrement votre code** : Ne développez pas tout d’un coup sans vérifier si ça fonctionne.
-- **Commencez par des fonctionnalités simples** avant d'ajouter des optimisations.
-- **Utilisez des prints et des logs** pour voir où ça bloque.
-- **Ne négligez pas la documentation** : Expliciter vos choix facilitera la compréhension du projet.
-- **Anticipez les erreurs possibles** (mauvaises entrées utilisateur, client qui se déconnecte, etc.).
+- **Communiquez souvent** sur l’état d’avancement
+- **Divisez clairement les tâches**, mais **relisez le travail de l’autre**
+- **Gardez un repo à jour et synchronisé**
+- **Testez chaque ajout de code**
+- **Planifiez des points réguliers** pour vérifier que tout avance
 
 ---
 
-## **7. Ressources**
+## **7. Ressources Utiles**
 
-Voici quelques liens utiles pour vous aider dans la réalisation du projet.
+### Python & Réseau
 
-### **Documentation Python**
+- [Docs Python](https://docs.python.org/3/)
+- [Sockets Python](https://realpython.com/python-sockets/)
 
-- [Documentation officielle de Python](https://docs.python.org/3/)
-- [Tutoriel sur les fichiers en Python](https://realpython.com/read-write-files-python/)
+### Outils & Gestion
 
-### **Programmation Réseau**
+- [GitHub](https://github.com/)
+- [Trello](https://trello.com/)
+- [Notion](https://www.notion.so/)
 
-- [Introduction aux sockets en Python](https://realpython.com/python-sockets/)
-- [Exemples de serveurs et clients avec `socket`](https://docs.python.org/3/library/socket.html)
+### Débogage & IA
 
-### **Tests et Débogage**
-
-- [Documentation de `pytest`](https://docs.pytest.org/en/stable/)
-- [Guide de débogage en Python](https://realpython.com/python-debugging-pdb/)
-
-### **Intelligence Artificielle et Algorithmes**
-
-- [Utilisation de statistiques pour améliorer une IA](https://towardsdatascience.com/basic-statistics-for-ai-enthusiasts-73ca91d3649a)
-- [Concepts de base des heuristiques en IA]([https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-heuristic-search/](https://en.wikipedia.org/wiki/Heuristic_(computer_science)))
-
-### **Gestion de Projet**
-
-- [Trello - Outil de gestion de tâches](https://trello.com/)
-- [Notion - Outil de documentation et d'organisation](https://www.notion.so/)
+- [Guide `pytest`](https://docs.pytest.org/en/stable/)
+- [Debugging en Python](https://realpython.com/python-debugging-pdb/)
+- [Heuristiques IA](https://en.wikipedia.org/wiki/Heuristic_(computer_science))
 
 ---
 
-## **8. Objectifs à Atteindre**
+## **8. Objectifs Final par Binôme**
 
-- **Phase 1** : Un jeu **fonctionnel en solo** avec gestion du temps et du score.
-- **Phase 2** : Un **mode multijoueur stable**, où les joueurs peuvent proposer des lettres et voir l’évolution du mot en temps réel.
-- **Phase 3** : Une **intelligence artificielle capable de jouer seule**, avec une logique d’apprentissage et d’optimisation.
+- 🎯 **Phase 1** : Jeu solo complet
+- 🎯 **Phase 2** : Multijoueur fonctionnel et stable
+- 🎯 **Phase 3** : IA stratégique et performante
 
-L’objectif est d’avoir un projet **fonctionnel et bien structuré**, en appliquant de bonnes pratiques de développement.
+Le projet doit être **propre, testé, structuré, et collaboratif**.
 
-Bonne programmation !
+Bonne programmation à tous les binômes ! 👥💻🚢
