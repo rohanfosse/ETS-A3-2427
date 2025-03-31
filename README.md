@@ -27,7 +27,7 @@ Le projet se déroule en trois phases progressives à réaliser dans l’ordre, 
 | Phase | Objectif | Lien vers les consignes |
 |-------|---------|------------------------|
 | **Phase 1 : Version Solo** | Jeu solo avec un adversaire virtuel simple. | [Consignes Phase 1](Phase_1_Fondamentaux/Phase_1_Consignes.md) |
-| **Phase 2 : Mode Multijoueur** | Ajout du multijoueur réseau avec gestion simultanée des joueurs. | [Consignes Phase 2](Phase_2_Multijoueurs/Phase_2_Consignes.md) |
+| **Phase 2 : Mode Multijoueur** | Ajout du multijoueur réseau avec gestion simultanée des joueurs. | [Consignes Phase 2](02-Jeu_Multijoueur/Phase_2_Consignes.md) |
 | **Phase 3 : Intelligence Artificielle** | Développement d’une IA capable de jouer efficacement et d'apprendre des stratégies de jeu. | [Consignes Phase 3](Phase_3_IA/Phase_3_Consignes.md) |
 
 ---
